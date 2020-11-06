@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 
-const Cell = (props) => (<div 
+const Cell = ({isInitial, number, onChange}) => (
+  <div 
     onClick={ e=> {
-      if(props.isInitial) {
+      if(isInitial) {
         return;
       }
-      props.onChange((props.number +1) % 5)
+      onChange((number +1) % 5)
     }}
-    className={`cell ${props.isInitial ? 'initial' : ''}`}
+    className={`cell ${isInitial ? 'initial' : ''}`}
   >
-    {props.number !== 0 && props.number}
+    {number !== 0 && number}
   </div>)
 
 
